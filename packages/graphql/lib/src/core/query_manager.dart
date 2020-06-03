@@ -238,7 +238,7 @@ class QueryManager {
     bool writeToCache = false,
   }) {
     final ObservableQuery observableQuery = getQuery(queryId);
-    if (writeToCache) {
+    if (writeToCache && observableQuery != null) {
       cache.write(
         observableQuery.options.toKey(),
         queryResult.data,
